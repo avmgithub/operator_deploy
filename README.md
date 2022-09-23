@@ -5,6 +5,7 @@
 1. Mirror the required images with skopeo
 2. Deploy the catalogsource yaml file.
 3. Deploy operator group.
+4. Deploy operator via Operator hub gui
 
 ### Mirror the required images with skopeo
 Example command:
@@ -44,6 +45,10 @@ Check the package manifest
     $ oc get packagemanifest -n openshift-marketplace
 
 ### Deploy Operator group
+Switch to the namespace where you want to install the operator (openshift-operators if you are installing in all namespaces, or a custom name if you are installing in a specific namespace):
+
+    $ oc project <namespace>
+
 Example operator group:
 
     apiVersion: operators.coreos.com/v1
@@ -54,6 +59,15 @@ Example operator group:
     spec:
       targetNamespaces:
       - REPLACE_NAMESPACE
+
+Apply the operator group
+```
+$ oc apply -f operator-group.yaml
+```
+
+Validate deployment of operator
+
+    $ oc get csv -n <namespace>
 
 # References 
 
