@@ -44,6 +44,8 @@ Check the package manifest
 
     $ oc get packagemanifest -n openshift-marketplace
 
+Note: As this is an airgapped system, I am not certain if the subscription yaml file is needed to get the operator up and running.
+
 ### Deploy Operator group
 Switch to the namespace where you want to install the operator (openshift-operators if you are installing in all namespaces, or a custom name if you are installing in a specific namespace):
 
