@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: ibm-transadv-catalog-group
+  namespace: REPLACE_NAMESPACE
+spec:
+  targetNamespaces:
+  - REPLACE_NAMESPACE

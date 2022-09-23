@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-websphere-liberty-catalog-subscription
+  namespace: REPLACE_NAMESPACE
+spec:
+  channel: REPLACE_CHANNEL_NAME
+  name: ibm-websphere-liberty
+  installPlanApproval: Automatic
+  source: ibm-websphere-liberty-catalog
+  sourceNamespace: openshift-marketplace

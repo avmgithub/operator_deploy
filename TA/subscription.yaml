@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-transformation-advisor
+  namespace: REPLACE_NAMESPACE
+spec:
+  channel: REPLACE_CHANNEL_NAME
+  name: ibm-transformation-advisor
+  installPlanApproval: Automatic
+  source: ibm-transadv-catalog
+  sourceNamespace: openshift-marketplace
+  startingCSV: ibm-transformation-advisor.vREPLACE_CSV_VERSION

@@ -1,0 +1,27 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibmmq-operator-catalogsource
+  namespace: openshift-marketplace
+spec:
+  displayName: ibm-mq-2.0.2
+  publisher: IBM
+  image: icr.io/bofa/cpopen/ibm-mq-operator-catalog@sha256:d76496b571eb6380910a59fca7aef53aa3d9c7ef5ea1b5dfcaabaf08b1ddce7e
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 30m0s
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: opencloud-operators
+  namespace: openshift-marketplace
+spec:
+  displayName: ibm-cp-common-services-1.15.4
+  publisher: IBM
+  image: icr.io/bofa/cpopen/ibm-common-service-catalog@sha256:1bbe0b64eff34890c409d687085dd7497e5b3d239fbb307e90abe90ff64b4294
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 30m0s
