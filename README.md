@@ -81,3 +81,5 @@ Validate deployment of operator
 [Create ImageContentSourcePolicy](https://www.ibm.com/docs/en/scalecontainernative?topic=appendix-airgap-setup-network-restricted-red-hat-openshift-container-platform-clusters)
 
 [Managing Custom Catalogs](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-managing-custom-catalogs.html)
+
+[Internal IBM Only reference](https://ibmdocs-test.mybluemix.net/docs/en/SSGT7J_22.2_test?topic=operators-installing-using-cli)
