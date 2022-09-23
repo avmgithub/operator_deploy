@@ -45,6 +45,34 @@ Check the package manifest
     $ oc get packagemanifest -n openshift-marketplace
 
 
+### Configure image content source policy
+For reference [see](https://www.ibm.com/docs/en/scalecontainernative?topic=appendix-airgap-setup-network-restricted-red-hat-openshift-container-platform-clusters)
+
+Example image content source policy:
+```
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: ibm-mq
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - icr.io/bofa/cp
+    source: cp.icr.io/cp
+  - mirrors:
+    - icr.io/bofa/ibmcom
+    source: docker.io/ibmcom
+  - mirrors:
+    - icr.io/bofa/cpopen
+    source: icr.io/cpopen
+  - mirrors:
+    - icr.io/bofa/ibm-messaging
+    source: icr.io/ibm-messaging
+  - mirrors:
+    - icr.io/bofa/opencloudio
+    source: quay.io/opencloudio
+```
+
 ### Deploy Operator group
 Switch to the namespace where you want to install the operator (openshift-operators if you are installing in all namespaces, or a custom name if you are installing in a specific namespace):
 
@@ -85,3 +113,5 @@ Note: As this is an airgapped system, I am not certain if the subscription yaml 
 [Managing Custom Catalogs](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-managing-custom-catalogs.html)
 
 [Internal IBM Only reference](https://ibmdocs-test.mybluemix.net/docs/en/SSGT7J_22.2_test?topic=operators-installing-using-cli)
+
+[Airgap setup for network restricted Red Hat OpenShift Container Platform clusters](https://www.ibm.com/docs/en/scalecontainernative?topic=appendix-airgap-setup-network-restricted-red-hat-openshift-container-platform-clusters)

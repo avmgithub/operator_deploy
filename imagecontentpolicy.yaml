@@ -1,0 +1,21 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: ibm-mq
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - icr.io/bofa/cp
+    source: cp.icr.io/cp
+  - mirrors:
+    - icr.io/bofa/ibmcom
+    source: docker.io/ibmcom
+  - mirrors:
+    - icr.io/bofa/cpopen
+    source: icr.io/cpopen
+  - mirrors:
+    - icr.io/bofa/ibm-messaging
+    source: icr.io/ibm-messaging
+  - mirrors:
+    - icr.io/bofa/opencloudio
+    source: quay.io/opencloudio
